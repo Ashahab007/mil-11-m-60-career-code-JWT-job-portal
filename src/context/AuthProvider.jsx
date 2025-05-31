@@ -47,8 +47,11 @@ const AuthProvider = ({ children }) => {
         const userData = { email: currentUser.email }; //as we have send the email from server so we set the current user email from the client side
 
         // 4.2 now using axios we sent to the email to the server
+        // 4.7 now set withCredentials:true after userData to send the cookies
         axios
-          .post("http://localhost:3000/jwt", userData)
+          .post("http://localhost:3000/jwt", userData, {
+            withCredentials: true,
+          })
           .then((res) => {
             console.log("token after jwt", res.data);
             const token = res.data.token; //just took the token from res.data
