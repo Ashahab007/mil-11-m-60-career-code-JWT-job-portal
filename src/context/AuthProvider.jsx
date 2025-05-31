@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const userData = { email: currentUser.email }; //as we have send the email to the server so we set the current user email from the client side
 
-        // 4.2 now using axios we sent the email to the server
+        // 4.2 now using axios we sent the email to the server to generate token
         // 4.6 now set {withCredentials:true} after userData to send the cookies
         axios
           .post("http://localhost:3000/jwt", userData, {
