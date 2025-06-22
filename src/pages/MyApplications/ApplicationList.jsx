@@ -5,7 +5,6 @@ const ApplicationList = ({ applicationsPromise }) => {
   const applications = use(applicationsPromise);
   console.log(applications);
 
- 
   return (
     <div className="overflow-x-auto">
       <h1>Total Application Applied: {applications.length}</h1>
@@ -22,7 +21,6 @@ const ApplicationList = ({ applicationsPromise }) => {
           </tr>
         </thead>
         <tbody>
-          {/* 25.6 created a table row component and pass as props */}
           {applications.map((application, index) => (
             <ApplicationTable
               key={application._id}
